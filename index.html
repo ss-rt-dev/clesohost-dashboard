@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cleso Host</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-mark">C</div>
+        <div class="logo-name">Cleso <span>Host</span></div>
+      </div>
+      <div id="login-form" class="auth-form">
+        <h1>Anmelden</h1>
+        <p class="auth-sub">Willkommen zurück bei Cleso Host</p>
+        <div class="form-group">
+          <label>E-Mail</label>
+          <input type="email" id="login-email" placeholder="name@domain.de" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label>Passwort</label>
+          <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" />
+        </div>
+        <button class="btn btn-primary btn-full" id="btn-login">Anmelden</button>
+        <p class="auth-switch">Noch kein Konto? <a href="#" id="to-register">Registrieren</a></p>
+      </div>
+      <div id="register-form" class="auth-form" style="display:none">
+        <h1>Registrieren</h1>
+        <p class="auth-sub">Erstelle deinen Cleso Host Account</p>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="reg-name" placeholder="Dein Name" />
+        </div>
+        <div class="form-group">
+          <label>E-Mail</label>
+          <input type="email" id="reg-email" placeholder="name@domain.de" />
+        </div>
+        <div class="form-group">
+          <label>Passwort</label>
+          <input type="password" id="reg-password" placeholder="Mindestens 8 Zeichen" />
+        </div>
+        <button class="btn btn-primary btn-full" id="btn-register">Konto erstellen</button>
+        <p class="auth-switch">Bereits registriert? <a href="#" id="to-login">Anmelden</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="app" style="display:none">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <a href="#" class="logo" data-page="dashboard">
+          <div class="logo-mark">C</div>
+          <div class="logo-name">Cleso <span>Host</span></div>
+        </a>
+      </div>
+      <nav class="nav">
+        <div class="nav-section">Übersicht</div>
+        <button class="nav-item active" data-page="dashboard">Dashboard</button>
+        <button class="nav-item" data-page="servers">Server</button>
+        <div class="nav-section staff-only">Team</div>
+        <button class="nav-item staff-only" data-page="team">Team & Rollen</button>
+        <button class="nav-item staff-only" data-page="users">Nutzer & Guthaben</button>
+        <div class="nav-section">Support</div>
+        <button class="nav-item" data-page="tickets">Tickets</button>
+        <button class="nav-item" data-page="messages">Nachrichten</button>
+        <div class="nav-section">Account</div>
+        <button class="nav-item" data-page="credits">Guthaben</button>
+        <button class="nav-item" data-page="settings">Einstellungen</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="user-chip">
+          <div class="avatar" id="user-avatar">?</div>
+          <div class="user-meta">
+            <div class="user-name" id="user-name">—</div>
+            <div class="user-role" id="user-role">—</div>
+          </div>
+        </div>
+        <button class="btn-logout" id="btn-logout" title="Abmelden">Abmelden</button>
+      </div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menu-btn" aria-label="Menü">Menü</button>
+        <div class="topbar-title" id="page-title">Dashboard</div>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost" id="btn-refresh">Aktualisieren</button>
+        </div>
+      </header>
+      <div class="content" id="content"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
