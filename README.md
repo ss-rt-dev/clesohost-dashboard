@@ -4,13 +4,13 @@ Kunden-Dashboard für **Cleso Host** – verbunden mit Pterodactyl.
 
 ## Features
 
-- **Login / Register / Logout**
-- **Rollen-System**: Inhaber · Admin · Technical · Developer · Kunde
-- **Server-Übersicht** (Pterodactyl API vorbereitet)
+- Login / Register / Logout
+- Rollen: Inhaber · Admin · Technical · Developer · Kunde
+- Server-Übersicht (Pterodactyl API vorbereitet)
 - **Internes Guthaben** (kein Echtgeld – nur Discord-Giveaways)
-- **Tickets**
-- **Live-Nachrichten** (Chat-ähnlich)
-- **Team-Verwaltung** & Nutzer-Guthaben
+- Tickets
+- Live-Nachrichten (Chat)
+- Team-Verwaltung & Credits vergeben
 
 ## Demo-Login
 
@@ -18,24 +18,22 @@ Kunden-Dashboard für **Cleso Host** – verbunden mit Pterodactyl.
 |--------|----------|-------|
 | `justin@cleso-host.com` | `admin123` | Inhaber |
 
-## Lokal starten
+## Dateien
 
-Einfach `index.html` im Browser öffnen oder:
+- `index.html` – Oberfläche
+- `styles.css` – Design (dunkles Schwarz + Hellblau)
+- `app.js` – Logik (Tickets, Chat, Credits, Auth)
+
+Falls `app.js` noch fehlt oder unvollständig ist: die komplette Datei aus dem lokalen Build nach `/app.js` hochladen (GitHub → Add file → Upload).
+
+## Lokal / Vercel
 
 ```bash
 npx serve .
 ```
 
-## Vercel
-
-Den gesamten Ordner auf Vercel deployen (Static Site).
-
-## Pterodactyl API
-
-Unter **Einstellungen** Panel-URL + Client-API-Key eintragen.  
-Für Produktion später über einen Backend-Proxy absichern.
+Oder den Ordner auf Vercel als Static Site deployen.
 
 ## Wichtig
 
-Das Guthaben im Dashboard ist **kein echtes Geld**.  
-Es wird über Discord-Giveaways vergeben und dient nur der internen Nutzung.
+Credits = **kein Echtgeld**. Nur internes Guthaben über Discord-Giveaways.
